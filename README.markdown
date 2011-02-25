@@ -97,10 +97,10 @@ This example sets up a boiler-plate Connect-based app and handles one of the end
 
 Integration with other approaches/frameworks should be similar.  The key things to note are:
 
-	* You must call `webSocketHandler.configureServer(server)` to register the upgrade handler that makes everything work
-	* When you handle a request that has a `webSocket` instance on its response, you can take special action
-	* In order to actually use the WebSocket, you should add events to the `res.webSocket` and then call `res.webSocket.connect()`.  Because of the way the protocol is framed and may come over the wire, it is important to add event listeners before calling connect.  There may already be data pending and your listeners may fire immediately.
-	* Once connected you can call `res.webSocket.sendTextMessage(buffer_or_string)` or `res.webSocket.sendBinaryMessage(buffer_or_string)` (only on new protocol)
+* You must call `webSocketHandler.configureServer(server)` to register the upgrade handler that makes everything work
+* When you handle a request that has a `webSocket` instance on its response, you can take special action
+* In order to actually use the WebSocket, you should add events to the `res.webSocket` and then call `res.webSocket.connect()`.  Because of the way the protocol is framed and may come over the wire, it is important to add event listeners before calling connect.  There may already be data pending and your listeners may fire immediately.
+* Once connected you can call `res.webSocket.sendTextMessage(buffer_or_string)` or `res.webSocket.sendBinaryMessage(buffer_or_string)` (only on new protocol)
 
 Status
 ------
@@ -109,9 +109,10 @@ I originally mocked this library up to test an Android WebSocket client I was wr
 Both the draft76 and draft03 protocols are implemented but I tested the draft03 protocol against a client that I wrote and it may have problems.  It should be considered a work in progress and I intend to have it track to the latest spec.
 
 The following are wholly unimplemented at present:
-	* Fragment handling
-	* Extensions
-	* Initiating a ping (although everything exists to respond to it and emit events if one is received)
+
+* Fragment handling
+* Extensions
+* Initiating a ping (although everything exists to respond to it and emit events if one is received)
 
 These parts add complexity to the draft03 protocol for little benefit (in my opinion) and I am waiting to see how they fare in the final spec.
 
