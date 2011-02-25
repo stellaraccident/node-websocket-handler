@@ -1,0 +1,16 @@
+{
+	name: 'node-websocket-handler',
+	description: 'Add websocket handling to your existing http stack',
+	homepage: 'https://github.com/stellaeof/node-websocket-handler',
+	author: 'Stella Laurenzo <stella@laurenzo.org>',
+	version: '0.0.1',
+	keywords: ['websocket', 'WebSocket'],
+	files: ['index.js', 'lib/webSocketHandler.js', 'lib/draft76Protocol.js', 'lib/standardProtocol.js'],
+	main: 'index',
+	
+	repository: {
+		type: 'git',
+		url: 'git://github.com/stellaeof/node-websocket-handler.git'
+	}
+}
+
